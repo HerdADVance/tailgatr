@@ -1,0 +1,41 @@
+a{  
+	color: white;
+	text-decoration:none;
+}
+
+body{
+	font-family: 'Open Sans' sans-serif;
+}
+
+#header{
+	background: #2FBB2F;
+	border-bottom:3px solid black;
+	height: 40px;
+}
+
+h1{
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 40px;
+	margin-left: 5%;
+}
+
+#mapbox{
+	/*background: url(../images/autzen.jpg);
+	background-repeat: no-repeat;*/
+	height: 650px;
+}
+
+#map{
+	height: 650px;
+	/*margin: 50px 10%;*/
+	width: 100%;
+}
+
+.leaflet-tile-pane{
+	display:none;
+}
+.leaflet-google-layer{
+	z-index:0;
+}
