@@ -1,0 +1,30 @@
+class HostsController < ApplicationController
+
+  def index
+    @params = params
+  end
+
+  def new
+    @tailgate = Tailgate.new
+  end
+
+  def create
+    #params.permit!
+    @school = School.find_by(name: params[:school]).id
+    @tailgate = Tailgate.new(name: params[:name], latlng: params[:latlng], description: params[:descrption], location: params[:location], school_id: @school)    
+    @tailgate.save
+    redirect_to root_path
+  end
+
+  def view
+  end
+
+  private
+
+  # def tailgate_params
+  #   params.require(:tailgate).permit(:name, :latlng, :location, :description)
+  # end
+
+
+
+end

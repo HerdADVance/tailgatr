@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tailgatr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="UTF-8">
+	<title>Tailgatr</title>
+	<link rel="icon" href="/holdem.ico">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+	<link rel="stylesheet" href="/assets/css/master.css">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script src="/assets/js/backstretch.js"></script>
+	<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+    <script src="http://matchingnotes.com/javascripts/leaflet-google.js"></script>
+
+	<script>
+	(function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})()
+	</script>
+
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js?v=1.0"></script>
+
+
+
 </head>
+
+
 <body>
+
 
 <%= yield %>
 
+<script>
+
+var map = L.map('map').setView([37.55, -96.000], 5);
+
+var googleLayer = new L.Google('ROADMAP');
+map.addLayer(googleLayer);
+
+<% @schools = School.all 
+@schools.each do |x| %>
+
+var <%= x.image %>= L.icon({
+  iconUrl: '/assets/images/<%= x.image%>.png',
+  iconSize:     [40, 40],
+  iconAnchor:   [20, 20], 
+  popupAnchor:  [20, 20]
+});
+
+L.marker([<%= x.latlng %>], {icon: <%= x.image %>}).addTo(map).on('click', function(e) {
+	map.setView([<%= x.latlng %>], 17);
+	map.removeLayer(googleLayer);
+	googleLayer = new L.Google('HYBRID');
+
+  map.addLayer(googleLayer);
+  $('#school').val('<%= x.name %>');
+  $('#latlng').val('');
+  $('#header').css('background', '#<%= x.pcolor %>');
+  $('h1 a').css('color', '#<%= x.scolor %>');
+
+});
+
+<% end %>
+
+var orig = {
+"lat": 89.99,
+"lng": -0.01
+};
+var newMarker = new L.marker(orig).addTo(map);
+
+map.on('click', function(e) {
+	
+		  map.removeLayer(newMarker);
+      newMarker = new L.marker(e.latlng).addTo(map);
+      console.log(e);
+
+	var latlng = (e.latlng.toString());
+	latlng = latlng.replace(/[\(\)&]+/g, '');
+	latlng = latlng.replace( /[A-Za-z]/g, '' );
+  $('#latlng').val(latlng);
+});
+
+$('#addtg').click(function() {
+  $('#addform').slideDown();
+  $(this).animate({
+    padding: '0 20px 20px 20px',
+    width:'400px'
+  });
+  
+});
+
+</script>
+
 </body>
 </html>
+
+
+

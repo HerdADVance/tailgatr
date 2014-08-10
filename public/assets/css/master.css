@@ -1,0 +1,96 @@
+a{  
+	color: white;
+	text-decoration:none;
+}
+
+body{
+	font-family: 'Open Sans' sans-serif;
+}
+
+#header{
+	background: #666;
+	border-bottom:3px solid black;
+	height: 40px;
+}
+
+h1{
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 40px;
+	margin-left: 5%;
+}
+
+#addtg{
+	background: rgba(0,0,0,0.85);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color: white;
+	cursor: pointer;
+	margin-right: 3%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 15%;
+	z-index: 1;
+}
+
+h2{
+	font-size: 18px;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+#addform{
+	display: none;
+}
+
+#addform label{
+	color: #CCC;
+	display: block;
+	padding:8px 0 2px 0;
+}
+
+#addform input[type='text'], #addform textarea{
+	font-size: 12px;
+	padding: 2px 4px;
+	width: 60%;
+}
+
+#addform textarea{
+	height: 150px;
+	padding-top:4px;
+	width: 95%;
+}
+
+#addform #submit{
+	cursor: pointer;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	height: 25px;
+	margin-top: 15px;
+	padding: 2px 5px;
+}
+
+#mapbox{
+	/*background: url(../images/autzen.jpg);
+	background-repeat: no-repeat;*/
+	height: 650px;
+	position: relative;
+}
+
+#map{
+	height: 650px;
+	/*margin: 50px 10%;*/
+	width: 100%;
+}
+
+.leaflet-tile-pane{
+	display:none;
+}
+.leaflet-google-layer{
+	z-index:0;
+}

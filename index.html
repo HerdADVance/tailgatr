@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><%= #render partial: "schools/index", #locals: {#schools: @schools #} %>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -52,247 +52,275 @@
  //            id: 'herdadvance.j5mk9e4f'
  //    }).addTo(map);
 
-var googleLayer = new L.Google('ROADMAP');
-       map.addLayer(googleLayer);
+	var googleLayer = new L.Google('ROADMAP');
+    map.addLayer(googleLayer);
 
  //    map.on('click', function(e) {
  //    	this.setView([38.4250, -82.4208], 16);
 	// });
     
-    var texas = L.icon({
-    iconUrl: 'texas.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+//     var texas = L.icon({
+//     iconUrl: 'texas.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([30.2836, -97.7325], {icon: texas}).addTo(map).on('click', function(e) {
-    	map.setView([30.2836, -97.7325], 18);
-    	map.removeLayer(googleLayer);
-    	googleLayer = new L.Google('HYBRID');
+//     L.marker([30.2836, -97.7325], {icon: texas}).addTo(map).on('click', function(e) {
+//     	map.setView([30.2836, -97.7325], 18);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
 
-       map.addLayer(googleLayer);
-	});
+//        map.addLayer(googleLayer);
+// 	});
 
-	var toledo = L.icon({
-    iconUrl: 'toledo.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+// 	var toledo = L.icon({
+//     iconUrl: 'toledo.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([41.6569, -83.6136], {icon: toledo}).addTo(map)
-    .bindPopup("<b>University of Toledo</b><br/>Toledo, OH");
+//     L.marker([41.6569, -83.6136], {icon: toledo}).addTo(map)
+//     .bindPopup("<b>University of Toledo</b><br/>Toledo, OH");
 
-    var bgsu = L.icon({
-    iconUrl: 'bgsu.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+//     var bgsu = L.icon({
+//     iconUrl: 'bgsu.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([41.3781, -83.6225], {icon: bgsu}).addTo(map).on('click', function(e) {
-    	map.setView([41.3781, -83.6225], 18);
-    	map.removeLayer(googleLayer);
-    	googleLayer = new L.Google('HYBRID');
+//     L.marker([41.3781, -83.6225], {icon: bgsu}).addTo(map).on('click', function(e) {
+//     	map.setView([41.3781, -83.6225], 18);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
 
-       map.addLayer(googleLayer);
-	});
+//        map.addLayer(googleLayer);
+// 	});
 
-    var marshall = L.icon({
-    iconUrl: 'marshall.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+//     var marshall = L.icon({
+//     iconUrl: 'marshall.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([38.4250, -82.4208], {icon: marshall}).addTo(map).on('click', function(e) {
-    	map.setView([38.4250, -82.4208], 19);
-    	map.removeLayer(googleLayer);
-    	googleLayer = new L.Google('HYBRID');
+//     L.marker([38.4250, -82.4208], {icon: marshall}).addTo(map).on('click', function(e) {
+//     	map.setView([38.4250, -82.4208], 19);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
 
-       map.addLayer(googleLayer);
-	});
+//        map.addLayer(googleLayer);
+// 	});
 
-    var akron = L.icon({
-    iconUrl: 'akron.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+// 	var michigan = L.icon({
+//     iconUrl: 'michigan.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([41.0723, -81.5080], {icon: akron}).addTo(map)
-    .bindPopup("<b>University of Akron</b><br/>Akron, OH");
+// 	L.marker([42.2658, -83.7486], {icon: michigan}).addTo(map).on('click', function(e) {
+//     	map.setView([42.2658, -83.7486], 19);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
 
+//        map.addLayer(googleLayer);
+// 	});
 
-var kent = L.icon({
-    iconUrl: 'kent.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
+//     var akron = L.icon({
+//     iconUrl: 'akron.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-    L.marker([41.1392, -81.3133], {icon: kent}).addTo(map)
-    .bindPopup("<b>Kent StateUniversity</b><br/>Kent, OH");
-
-var ohio = L.icon({
-    iconUrl: 'ohio.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([39.3211, -82.1028], {icon: ohio}).addTo(map)
-    .bindPopup("<b>Ohio University</b><br/>Athens, OH");
-
-var cincinnati = L.icon({
-    iconUrl: 'cincinnati.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([39.1311, -84.5161], {icon: cincinnati}).addTo(map)
-    .bindPopup("<b>University of Cincinnati</b><br/>Cincinnati, OH");
-
-var ohiostate = L.icon({
-    iconUrl: 'ohiostate.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([40.0017, -83.0197], {icon: ohiostate}).addTo(map)
-    .bindPopup("<b>Ohio State University</b><br/>Columbus, OH");
-
-var miamiohio = L.icon({
-    iconUrl: 'miamiohio.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([39.5194, -84.7328], {icon: miamiohio}).addTo(map)
-    .bindPopup("<b>Miami University</b><br/>Oxford, OH");
-
-var texasam = L.icon({
-    iconUrl: 'texasam.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([30.6100, -96.3403], {icon: texasam}).addTo(map)
-    .bindPopup("<b>Texas A&M</b><br/>College Station, TX");
-
-var baylor = L.icon({
-    iconUrl: 'baylor.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([31.5582, -97.1157], {icon: baylor}).addTo(map)
-    .bindPopup("<b>Baylor University</b><br/>Waco, TX");
-
-var texastech = L.icon({
-    iconUrl: 'texastech.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([33.5911, -101.8728], {icon: texastech}).addTo(map)
-    .bindPopup("<b>Texas Tech</b><br/>Lubbock, TX");
-
-var rice = L.icon({
-    iconUrl: 'rice.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([29.7164, -95.4092], {icon: rice}).addTo(map)
-    .bindPopup("<b>Rice University</b><br/>Houston, TX");
-
-var houston = L.icon({
-    iconUrl: 'houston.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([29.7219, -95.3492], {icon: houston}).addTo(map)
-    .bindPopup("<b>University of Houston</b><br/>Houston, TX");
-
-var utsa = L.icon({
-    iconUrl: 'utsa.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([29.4169, -98.4789], {icon: utsa}).addTo(map)
-    .bindPopup("<b>UTSA</b><br/>San Antonio, TX");
-
-var utep = L.icon({
-    iconUrl: 'utep.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([31.7733, -106.5081], {icon: utep}).addTo(map)
-    .bindPopup("<b>UTEP</b><br/>El Paso, TX");
-
-var texasst = L.icon({
-    iconUrl: 'texasst.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([29.8911, -97.9256], {icon: texasst}).addTo(map)
-    .bindPopup("<b>Texas State</b><br/>San Marcos, TX");
-
-var tcu = L.icon({
-    iconUrl: 'tcu.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([32.7097, -97.3681], {icon: tcu}).addTo(map)
-    .bindPopup("<b>Texas Christian University</b><br/>Fort Worth, TX");   
-
-var northtexas = L.icon({
-    iconUrl: 'northtexas.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([33.2036, -97.1594], {icon: northtexas}).addTo(map)
-    .bindPopup("<b>University of North Texas</b><br/>Denton, TX");
-
-var smu = L.icon({
-    iconUrl: 'smu.png',
-    iconSize:     [40, 40],
-    iconAnchor:   [20, 20], 
-    popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
-	});
-
-    L.marker([32.8366, -96.7840], {icon: smu}).addTo(map)
-    .bindPopup("<b>Southern Methodist University</b><br/>Dallas, TX");
+//     L.marker([41.0723, -81.5080], {icon: akron}).addTo(map)
+//     .bindPopup("<b>University of Akron</b><br/>Akron, OH");
 
 
+// var kent = L.icon({
+//     iconUrl: 'kent.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
 
-map.on('click', function(e) {
-    	alert(e.latlng.toString());
-	});
+//     L.marker([41.1392, -81.3133], {icon: kent}).addTo(map)
+//     .bindPopup("<b>Kent StateUniversity</b><br/>Kent, OH");
+
+// var ohio = L.icon({
+//     iconUrl: 'ohio.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([39.3211, -82.1028], {icon: ohio}).addTo(map)
+//     .bindPopup("<b>Ohio University</b><br/>Athens, OH");
+
+// var cincinnati = L.icon({
+//     iconUrl: 'cincinnati.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([39.1311, -84.5161], {icon: cincinnati}).addTo(map)
+//     .bindPopup("<b>University of Cincinnati</b><br/>Cincinnati, OH");
+
+// var ohiostate = L.icon({
+//     iconUrl: 'ohiost.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([40.0017, -83.0197], {icon: ohiostate}).addTo(map)
+//     .bindPopup("<b>Ohio State University</b><br/>Columbus, OH");
+
+//     L.marker([40.0017, -83.0197], {icon: ohiostate}).addTo(map).on('click', function(e) {
+//     	map.setView([40.0017, -83.0197], 19);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
+
+//        map.addLayer(googleLayer);
+// 	});
+
+// var miamiohio = L.icon({
+//     iconUrl: 'miamiohio.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([39.5194, -84.7328], {icon: miamiohio}).addTo(map)
+//     .bindPopup("<b>Miami University</b><br/>Oxford, OH");
+
+// var texasam = L.icon({
+//     iconUrl: 'texasam.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([30.6100, -96.3403], {icon: texasam}).addTo(map).on('click', function(e) {
+//     	map.setView([30.6100, -96.3403], 19);
+//     	map.removeLayer(googleLayer);
+//     	googleLayer = new L.Google('HYBRID');
+
+//        map.addLayer(googleLayer);
+// 	});
+
+// var baylor = L.icon({
+//     iconUrl: 'baylor.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([31.5582, -97.1157], {icon: baylor}).addTo(map)
+//     .bindPopup("<b>Baylor University</b><br/>Waco, TX");
+
+// var texastech = L.icon({
+//     iconUrl: 'texastech.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([33.5911, -101.8728], {icon: texastech}).addTo(map)
+//     .bindPopup("<b>Texas Tech</b><br/>Lubbock, TX");
+
+// var rice = L.icon({
+//     iconUrl: 'rice.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([29.7164, -95.4092], {icon: rice}).addTo(map)
+//     .bindPopup("<b>Rice University</b><br/>Houston, TX");
+
+// var houston = L.icon({
+//     iconUrl: 'houston.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([29.7219, -95.3492], {icon: houston}).addTo(map)
+//     .bindPopup("<b>University of Houston</b><br/>Houston, TX");
+
+// var utsa = L.icon({
+//     iconUrl: 'utsa.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([29.4169, -98.4789], {icon: utsa}).addTo(map)
+//     .bindPopup("<b>UTSA</b><br/>San Antonio, TX");
+
+// var utep = L.icon({
+//     iconUrl: 'utep.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([31.7733, -106.5081], {icon: utep}).addTo(map)
+//     .bindPopup("<b>UTEP</b><br/>El Paso, TX");
+
+// var texasst = L.icon({
+//     iconUrl: 'texasst.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([29.8911, -97.9256], {icon: texasst}).addTo(map)
+//     .bindPopup("<b>Texas State</b><br/>San Marcos, TX");
+
+// var tcu = L.icon({
+//     iconUrl: 'tcu.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([32.7097, -97.3681], {icon: tcu}).addTo(map)
+//     .bindPopup("<b>Texas Christian University</b><br/>Fort Worth, TX");   
+
+// var northtexas = L.icon({
+//     iconUrl: 'northtexas.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([33.2036, -97.1594], {icon: northtexas}).addTo(map)
+//     .bindPopup("<b>University of North Texas</b><br/>Denton, TX");
+
+// var smu = L.icon({
+//     iconUrl: 'smu.png',
+//     iconSize:     [40, 40],
+//     iconAnchor:   [20, 20], 
+//     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
+// 	});
+
+//     L.marker([32.8366, -96.7840], {icon: smu}).addTo(map)
+//     .bindPopup("<b>Southern Methodist University</b><br/>Dallas, TX");
 
 
-$.backstretch("assets/images/autzen.jpg");
+
+// map.on('click', function(e) {
+//     	alert(e.latlng.toString());
+// 	});
+
+
+// $.backstretch("assets/images/autzen.jpg");
 
 </script>
 

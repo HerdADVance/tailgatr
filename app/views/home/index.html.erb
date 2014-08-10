@@ -1,0 +1,21 @@
+<div id="header">
+	<h1><a href="/">Tailgatr</a></h1>
+</div>
+
+<div id="mapbox">
+	<div id="addtg">
+		<h2>Add A Tailgate!</h2>
+		<form action="/tailgates" method="post" name="tailgate" id="addform">
+			<label>Name</label><input name="name" type="text" />
+			<label>Location</label><input name="location" type="text" />
+			<label>School</label><input id="school" name="school" type="text" readonly />
+			<label>Description</label><textarea name="description"></textarea>
+		  <label>Coordinates</label><input id="latlng" name="latlng" type="text" readonly />
+		  <input id="submit" type="submit" value="Create Tailgate!" />
+
+		</form>	
+	</div>
+
+	<div id="map">
+	</div>
+</div>
