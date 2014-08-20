@@ -11,12 +11,19 @@ class TailgatesController < ApplicationController
   def create
     #params.permit!
     @school = School.find_by(name: params[:school]).id
-    @tailgate = Tailgate.new(name: params[:name], latlng: params[:latlng], description: params[:descrption], location: params[:location], school_id: @school)    
+    @tailgate = Tailgate.new(name: params[:name], latlng: params[:latlng], description: params[:description], location: params[:location], school_id: @school)    
     @tailgate.save
-    redirect_to root_path
+    tid = @tailgate.id
+    redirect_to "/tailgates/#{tid}"
   end
 
   def view
+    
+  end
+
+  def show
+    @tailgate = Tailgate.find(params[:id])
+    @school = School.find(@tailgate.school_id)
   end
 
   private

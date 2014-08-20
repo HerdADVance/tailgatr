@@ -94,3 +94,45 @@ h2{
 .leaflet-google-layer{
 	z-index:0;
 }
+
+
+/* TAILGATE VIEW */
+
+#tginfo{
+	float:left;
+	margin: 25px 0 0 5%;
+	width: 50%;
+}
+
+#tginfo h3{
+	font-size: 42px;
+	font-weight: bold;
+}
+
+#tgloc{
+	color: #CCC;
+	font-size: 20px;
+	margin: 5px 0;
+}
+
+#tgdesc{
+	font-size: 18px;
+	line-height: 28px;
+	margin-top: 20px;
+}
+
+#tgmap{
+	float: right;
+	height: 700px;
+	width: 40%;
+}
+.leaflet-popup-content p{
+	margin:0;
+}
+#puname{
+	font-size: 16px;
+	font-weight:bold;
+}
+#puloc {
+	margin:5px 0 15px 0;
+}

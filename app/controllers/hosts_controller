@@ -13,7 +13,7 @@ class HostsController < ApplicationController
     @school = School.find_by(name: params[:school]).id
     @tailgate = Tailgate.new(name: params[:name], latlng: params[:latlng], description: params[:descrption], location: params[:location], school_id: @school)    
     @tailgate.save
-    redirect_to root_path
+    #redirect_to root_path
   end
 
   def view

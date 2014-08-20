@@ -1,0 +1,25 @@
+<div id="header" style="background:#<%= @school.pcolor %>">
+	<h1><a href="/" style="color:#<%= @school.scolor %>">Tailgatr</a></h1>
+</div>
+
+<div id="tginfo">
+	<h3 style="color:#<%= @school.pcolor %>"><%= @tailgate.name %></h3>
+	<p id="tgloc"><%= @tailgate.location %></p>
+	<div id="tgdesc"><%= @tailgate.description %></div>
+</div>
+
+<div id="tgmap">
+</div>
+
+
+
+<script>
+
+var map = L.map('tgmap').setView([<%= @tailgate.latlng %>], 18);
+
+var googleLayer = new L.Google('HYBRID');
+map.addLayer(googleLayer);
+
+L.marker([<%= @tailgate.latlng %>]).addTo(map)
+
+</script>

@@ -35,66 +35,7 @@
 
 <%= yield %>
 
-<script>
 
-var map = L.map('map').setView([37.55, -96.000], 5);
-
-var googleLayer = new L.Google('ROADMAP');
-map.addLayer(googleLayer);
-
-<% @schools = School.all 
-@schools.each do |x| %>
-
-var <%= x.image %>= L.icon({
-  iconUrl: '/assets/images/<%= x.image%>.png',
-  iconSize:     [40, 40],
-  iconAnchor:   [20, 20], 
-  popupAnchor:  [20, 20]
-});
-
-L.marker([<%= x.latlng %>], {icon: <%= x.image %>}).addTo(map).on('click', function(e) {
-	map.setView([<%= x.latlng %>], 17);
-	map.removeLayer(googleLayer);
-	googleLayer = new L.Google('HYBRID');
-
-  map.addLayer(googleLayer);
-  $('#school').val('<%= x.name %>');
-  $('#latlng').val('');
-  $('#header').css('background', '#<%= x.pcolor %>');
-  $('h1 a').css('color', '#<%= x.scolor %>');
-
-});
-
-<% end %>
-
-var orig = {
-"lat": 89.99,
-"lng": -0.01
-};
-var newMarker = new L.marker(orig).addTo(map);
-
-map.on('click', function(e) {
-	
-		  map.removeLayer(newMarker);
-      newMarker = new L.marker(e.latlng).addTo(map);
-      console.log(e);
-
-	var latlng = (e.latlng.toString());
-	latlng = latlng.replace(/[\(\)&]+/g, '');
-	latlng = latlng.replace( /[A-Za-z]/g, '' );
-  $('#latlng').val(latlng);
-});
-
-$('#addtg').click(function() {
-  $('#addform').slideDown();
-  $(this).animate({
-    padding: '0 20px 20px 20px',
-    width:'400px'
-  });
-  
-});
-
-</script>
 
 </body>
 </html>
