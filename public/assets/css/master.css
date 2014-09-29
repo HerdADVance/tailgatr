@@ -78,12 +78,12 @@ h2{
 #mapbox{
 	/*background: url(../images/autzen.jpg);
 	background-repeat: no-repeat;*/
-	height: 650px;
+	height: 800px;
 	position: relative;
 }
 
 #map{
-	height: 650px;
+	height: 800px;
 	/*margin: 50px 10%;*/
 	width: 100%;
 }
